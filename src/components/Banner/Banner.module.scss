@@ -1,0 +1,17 @@
+@import "../../style/variables.scss";
+
+.banner {
+  width: 100%;
+  background-color: $dark;
+  height: 100px;
+  padding: 0 25px 0 45px;
+  display: flex;
+  justify-content: space-between;
+}
+.bannerText {
+  flex: 1;
+  font-weight: bold;
+  font-size: 24px;
+  color: $white;
+  padding: 18px 0 0 83px;
+}

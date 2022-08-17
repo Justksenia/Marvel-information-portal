@@ -1,0 +1,32 @@
+.comicsList {
+  margin-top: 45px;
+}
+.comicsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.comicsItem 
+{
+  transition: 0.3s transform;
+  flex-basis: 23%;
+  margin-bottom: 20px;
+  img {
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
+    width: 225px;
+    height: 345px;
+  }
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+.comicsItemName {
+  margin-top: 10px;
+  font-weight: bold;
+}
+.comicsItemPrice {
+  margin-top: 5px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.6);
+  text-transform: uppercase;
+}

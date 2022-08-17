@@ -1,0 +1,62 @@
+@import "../../style/variables.scss";
+
+.randomchar {
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
+  align-items: center;
+  margin-bottom: 20px;
+
+  .randomcharLeft {
+    flex-basis: 50%;
+    padding: 40px 35px;
+    display: grid;
+    grid-template-columns: 180px auto;
+    column-gap: 30px;
+    img {
+      width: 180px;
+      height: 180px;
+    }
+  }
+  .randomcharInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 3px;
+  }
+  .randomcharName {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 29px;
+    text-transform: uppercase;
+  }
+  .randomcharDescription {
+    font-size: 14px;
+    line-height: 16.41px;
+  }
+  .randomcharBtns {
+    display: flex;
+    justify-content: space-between;
+  }
+  .randomcharRight {
+    flex-basis: 50%;
+    padding: 40px 35px;
+    background-color: $dark;
+    position: relative;
+    button {
+      margin-top: 13px;
+    }
+    img {
+      position: absolute;
+      bottom: 14px;
+      right: -37px;
+    }
+  }
+  .randomcharTitle {
+    font-weight: bold;
+    font-size: 24px;
+    letter-spacing: -0.045em;
+    color: $white;
+  }
+}
+
