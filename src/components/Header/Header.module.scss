@@ -5,9 +5,9 @@ header {
   display: flex;
   justify-content: space-between;
   .headerTitle {
+    flex:1;
     font-weight: bold;
     font-size: 28px;
-    line-height: 37px;
     span {
       color: $main-color;
     }
@@ -27,4 +27,5 @@ header {
       }
     }
   }
+
 }

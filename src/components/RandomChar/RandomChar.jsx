@@ -1,7 +1,7 @@
 
 import React from "react";
 
-import Preloader from "../UI/Preloader";
+import SkeletonRandom from "../UI/skeleton/SkeletonRandom";
 
 import style from "./RandomChar.module.scss";
 
@@ -16,13 +16,15 @@ const RandomChar = ({randomChar, errorRandom, loadingRandom, setRandomChar, disa
     };
   }, []);
 
-  const content = loadingRandom ? <Preloader /> : <View char={randomChar} errorRandom={errorRandom} disabledRandom={disabledRandom} /> ;
+  const content = loadingRandom ? <SkeletonRandom/> : <View char={randomChar} errorRandom={errorRandom} disabledRandom={disabledRandom} /> ;
 
 
   return (
     <div className={style.randomchar}>
-     {content}
-      <div className={style.randomcharRight}>
+          <div className={style.randomcharLeft}>
+          {content}
+          </div>
+          <div className={style.randomcharRight}>
         <div className={style.randomcharTitle}>
          <p> Random character for today! </p>
           <br />
@@ -40,9 +42,9 @@ const RandomChar = ({randomChar, errorRandom, loadingRandom, setRandomChar, disa
 const View = ({ char, errorRandom, disabledRandom }) => {
   const { name, description, thumbnail, urls} = char[0];
   return (
-    <div className={style.randomcharLeft}>
+    <>
       <img
-        src={errorRandom?"img/ironman.png": thumbnail.path+".jpg"}
+        src={errorRandom?"img/ironman.png": thumbnail.path+"."+thumbnail.extension}
         alt="Random character"
       />
       <div className={style.randomcharInfo}>
@@ -53,7 +55,7 @@ const View = ({ char, errorRandom, disabledRandom }) => {
           <button className="button button__grey" disabled={disabledRandom}><a href={urls[1].url}>Wiki </a></button>         
            </div>
       </div>
-    </div>
+    </>
   );
 };
 

@@ -1,8 +1,9 @@
-import Preloader from "../UI/Preloader";
-import Error404 from "../UI/Error404";
 
+import Error404 from "../UI/Error404";
+import SkeletonCharList from "../UI/skeleton/SkeletonCharList";
 
 import style from "./CharList.module.scss";
+
 
 const CharList = ({
   chars,
@@ -13,13 +14,10 @@ const CharList = ({
   getChars,
   offset,
 }) => {
-  const content = loading ? (
-    <Preloader />
-  ) : (
-    chars.map((item) => (
-      <CharItem key={item.id} char={item} updateChar={updateChar} />
+  const content = chars.map((item) => (
+      <CharItem key={item.id} char={item} updateChar={updateChar} loading={loading}/>
     ))
-  );
+  
   const errorComponent = error && <Error404 />;
 
   return (
@@ -39,8 +37,11 @@ const CharList = ({
   );
 };
 
-const CharItem = ({ updateChar, char }) => {
+const CharItem = ({ updateChar, char, loading }) => {
   return (
+    <>
+    {loading ? <SkeletonCharList/> : 
+    
     <li
       onClick={() => updateChar(char.id)}
       className={style.charItem}
@@ -48,7 +49,10 @@ const CharItem = ({ updateChar, char }) => {
     >
       <img src={char.thumbnail.path + ".jpg"} alt={char.name} />
       <div className={style.charName}>{char.name}</div>
-    </li>
+    </li> }
+    </>
+    
+    
   );
 };
 

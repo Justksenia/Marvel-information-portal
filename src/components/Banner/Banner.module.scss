@@ -9,9 +9,28 @@
   justify-content: space-between;
 }
 .bannerText {
-  flex: 1;
+  flex-basis: 65%;
   font-weight: bold;
   font-size: 24px;
   color: $white;
   padding: 18px 0 0 83px;
 }
+@media (max-width: 768px) {
+  .banner{
+    justify-content: space-around;
+    padding:0 5px;
+  }
+  .bannerText {
+    padding:8px 10px;
+    font-size: 18px;
+  }
+  .bannerLogoImg {
+    width: 122px;
+    height: 100px;
+  }
+  .bannerLogoText{
+    width: 100px;
+  }
+}
+
+

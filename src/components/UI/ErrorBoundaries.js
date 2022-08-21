@@ -1,14 +1,20 @@
 import React from "react"
 
 class ErrorBoundaries extends React.Component {
-    state={
-        error:false
-
+    constructor(props) {
+        super (props)
+        this.state={
+            error:false
+        }
     }
+   
+    static getDerivedStateFromError(error) {
+     
+        return { error: true };
+      }
     componentDidCatch (error, errorInfo) {
-        this.setState({
-            error:true
-        })
+        console.log(error, errorInfo)
+      
     }
     render () {
         if (this.state.error) {

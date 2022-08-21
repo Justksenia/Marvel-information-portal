@@ -24,7 +24,7 @@ const randomSlice=createSlice({
         randomError: state=>{
             state.loadingRandom=false
             state.errorRandom=true
-            state.disabledRandom=true
+            state.disabledRandom=false
             
         },
        

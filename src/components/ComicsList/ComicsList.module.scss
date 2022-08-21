@@ -9,7 +9,7 @@
 .comicsItem 
 {
   transition: 0.3s transform;
-  flex-basis: 23%;
+  flex-basis: 23%; 
   margin-bottom: 20px;
   img {
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.25);
@@ -18,6 +18,12 @@
   }
   &:hover {
     transform: translateY(-5px);
+  }
+  @media (max-width: 768px) {
+      img {
+        width: 185px;
+        height: 285px;
+      }
   }
 }
 .comicsItemName {

@@ -6,19 +6,23 @@
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.25);
   align-items: center;
   margin-bottom: 20px;
+    @media (max-width: 768px) {
+flex-direction: column;
+  }
 
   .randomcharLeft {
+    display: flex;
+    justify-content: space-between;
     flex-basis: 50%;
     padding: 40px 35px;
-    display: grid;
-    grid-template-columns: 180px auto;
-    column-gap: 30px;
     img {
       width: 180px;
       height: 180px;
+      flex-basis: 37%;
     }
   }
   .randomcharInfo {
+    flex-basis: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -27,19 +31,19 @@
   .randomcharName {
     font-weight: bold;
     font-size: 22px;
-    line-height: 29px;
     text-transform: uppercase;
   }
   .randomcharDescription {
     font-size: 14px;
-    line-height: 16.41px;
+   max-height: 50px;
+    overflow-y: scroll;
   }
   .randomcharBtns {
     display: flex;
     justify-content: space-between;
   }
   .randomcharRight {
-    flex-basis: 50%;
+    flex-basis: 49%;
     padding: 40px 35px;
     background-color: $dark;
     position: relative;
