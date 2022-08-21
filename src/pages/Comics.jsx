@@ -7,7 +7,6 @@ const Comics=({getNewComicsList, comics, loadingComics, disabledComics})=>{
         <Banner /> 
         <ComicsList comics={comics} loadingComics={loadingComics} disabledComics={disabledComics} getNewComicsList={getNewComicsList}/>
         </div>
-      
     )
 }
 
