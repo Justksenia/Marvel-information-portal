@@ -12,7 +12,6 @@ const ComicsList = ({
 }) => {
   const content = comics.map((item) => <ComicsListItem key={item.id} comics={item} loadingComics={loadingComics}/>)
   
-
   return (
 
     <div className={style.comicsList}>
